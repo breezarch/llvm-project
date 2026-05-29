@@ -48,7 +48,7 @@ granularity.  From the bottom up:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Layers communicate through well-defined APIs; lower layers have **zero dependency**
+Layers communicate through well-defined APIs; lower layers have **zero dependency**
 on higher layers.  This is enforced at the CMake level: `LLVMCore` does not link
 against `LLVMAnalysis`; `LLVMSupport` only links against `LLVMDemangle` and
 platform libraries.
