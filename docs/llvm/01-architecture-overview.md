@@ -99,7 +99,7 @@ This pipeline embodies the classic compiler design from Aho, Lam, Sethi & Ullman
 
 ### 1. SSA Form (Static Single Assignment)
 
-LLVM IR is in **SSA form**: every virtual register is assigned exactly once.
+LLVM IR is in #SSA-form: every virtual register is assigned exactly once.
 This is grounded in the seminal papers by Cytron et al. (1989, 1991) which proved
 that SSA construction is O(n α(n)) for reducible flow graphs.  LLVM enforces SSA
 via the `mem2reg` pass (promoting `alloca`/`load`/`store` to φ-nodes / `PHINode`)
@@ -108,7 +108,7 @@ and the verifier (`verifyFunction`).
 ### 2. The Use-Def Chain
 
 Every `Value` in LLVM maintains a doubly-linked list of `Use` objects.
-This is the **Use-Def chain** — a fundamental data structure for compiler
+This is the #Use-Def-chain — a fundamental data structure for compiler
 optimization.  When an instruction is RAUW'd (replaced-all-uses-with), the
 `Use` list is walked and all references are updated.  This design comes from
 the SSA literature and is implemented in `llvm/include/llvm/IR/Use.h`.
@@ -136,7 +136,7 @@ only at the CodeGen layer via:
 - `TargetFrameLowering` (stack frame layout)
 - `.td` (TableGen) files that declaratively describe the ISA
 
-This separation mirrors the **retargetable compiler** concept from the 1980s
+This separation mirrors the #retargetable compiler concept from the 1980s
 (e.g., the PQCC project at CMU), but LLVM achieves it with a practical,
 production-quality engineering approach.
 
