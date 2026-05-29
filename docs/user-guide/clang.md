@@ -7,37 +7,37 @@ functional category with practical examples. Based on `clang --help` output.
 
 ## Table of Contents
 
-1. [Basic Compilation](#1-basic-compilation)
-2. [Preprocessing](#2-preprocessing)
-3. [Language Standards & Dialects](#3-language-standards--dialects)
-4. [Optimization Control](#4-optimization-control)
-5. [Code Generation](#5-code-generation)
-6. [Debug Information](#6-debug-information)
-7. [Warning & Diagnostic Control](#7-warning--diagnostic-control)
-8. [Floating Point Control](#8-floating-point-control)
-9. [Sanitizers](#9-sanitizers)
-10. [Profiling (PGO, Coverage)](#10-profiling-pgo-coverage)
-11. [Link-Time Optimization (LTO)](#11-link-time-optimization-lto)
-12. [Modules & Precompiled Headers](#12-modules--precompiled-headers)
-13. [GPU / Offloading (CUDA, HIP, OpenMP)](#13-gpu--offloading-cuda-hip-openmp)
-14. [OpenCL Options](#14-opencl-options)
-15. [OpenMP Options](#15-openmp-options)
-16. [HLSL / DirectX / SPIR-V Options](#16-hlsl--directx--spirv-options)
-17. [Objective-C / Objective-C++ Options](#17-objective-c--objective-c-options)
-18. [SYCL Options](#18-sycl-options)
-19. [Target-Specific Options](#19-target-specific-options)
-20. [Include & Library Path Management](#20-include--library-path-management)
-21. [Linking](#21-linking)
-22. [Symbol Visibility & ABI](#22-symbol-visibility--abi)
-23. [Security Hardening](#23-security-hardening)
-24. [C++ Specific Options](#24-c-specific-options)
-25. [Developer & Debugging Options](#25-developer--debugging-options)
-26. [Miscellaneous](#26-miscellaneous)
-27. [Pass-Through Options](#27-pass-through-options)
+1. [[#Basic Compilation|Basic Compilation]]
+2. [[#Preprocessing|Preprocessing]]
+3. [[#Language Standards & Dialects|Language Standards & Dialects]]
+4. [[#Optimization Control|Optimization Control]]
+5. [[#Code Generation|Code Generation]]
+6. [[#Debug Information|Debug Information]]
+7. [[#Warning & Diagnostic Control|Warning & Diagnostic Control]]
+8. [[#Floating Point Control|Floating Point Control]]
+9. [[#Sanitizers|Sanitizers]]
+10. [[#Profiling (PGO, Coverage)|Profiling (PGO, Coverage)]]
+11. [[#Link-Time Optimization (LTO)|Link-Time Optimization (LTO)]]
+12. [[#Modules & Precompiled Headers|Modules & Precompiled Headers]]
+13. [[#GPU / Offloading (CUDA, HIP, OpenMP)|GPU / Offloading (CUDA, HIP, OpenMP)]]
+14. [[#OpenCL Options|OpenCL Options]]
+15. [[#OpenMP Options|OpenMP Options]]
+16. [[#HLSL / DirectX / SPIR-V Options|HLSL / DirectX / SPIR-V Options]]
+17. [[#Objective-C / Objective-C++ Options|Objective-C / Objective-C++ Options]]
+18. [[#SYCL Options|SYCL Options]]
+19. [[#Target-Specific Options|Target-Specific Options]]
+20. [[#Include & Library Path Management|Include & Library Path Management]]
+21. [[#Linking|Linking]]
+22. [[#Symbol Visibility & ABI|Symbol Visibility & ABI]]
+23. [[#Security Hardening|Security Hardening]]
+24. [[#C++ Specific Options|C++ Specific Options]]
+25. [[#Developer & Debugging Options|Developer & Debugging Options]]
+26. [[#Miscellaneous|Miscellaneous]]
+27. [[#Pass-Through Options|Pass-Through Options]]
 
 ---
 
-## 1. Basic Compilation
+## Basic Compilation
 
 ### Compile to Executable
 
@@ -90,7 +90,7 @@ clang -time hello.c -o hello
 
 ---
 
-## 2. Preprocessing
+## Preprocessing
 
 ### Controlling Preprocessor Output
 
@@ -178,7 +178,7 @@ clang -E -fkeep-system-includes hello.c
 
 ---
 
-## 3. Language Standards & Dialects
+## Language Standards & Dialects
 
 ### C Standards
 
@@ -288,7 +288,7 @@ clang -fraw-string-literals hello.cpp
 
 ---
 
-## 4. Optimization Control
+## Optimization Control
 
 ### Optimization Levels
 
@@ -406,7 +406,7 @@ clang -foptimization-record-passes=inline hello.c
 
 ---
 
-## 5. Code Generation
+## Code Generation
 
 ### Target Selection
 
@@ -528,7 +528,7 @@ clang -mllvm -print-after-all hello.c
 
 ---
 
-## 6. Debug Information
+## Debug Information
 
 ### Basic Debug Flags
 
@@ -642,7 +642,7 @@ clang -dsym-dir /output/dsyms hello.c
 
 ---
 
-## 7. Warning & Diagnostic Control
+## Warning & Diagnostic Control
 
 ### Warning Basics
 
@@ -786,7 +786,7 @@ clang -print-supported-extensions    # RISC-V, AArch64, ARM
 
 ---
 
-## 8. Floating Point Control
+## Floating Point Control
 
 ### Floating Point Model
 
@@ -901,7 +901,7 @@ clang -fno-strict-float-cast-overflow hello.c
 
 ---
 
-## 9. Sanitizers
+## Sanitizers
 
 Sanitizers are runtime instrumentation tools that detect bugs
 (memory errors, undefined behavior, data races, etc.) during program execution.
@@ -1195,7 +1195,7 @@ clang -fsanitize=type -fsanitize-type-outline-instrumentation hello.cpp
 
 ---
 
-## 10. Profiling (PGO, Coverage)
+## Profiling (PGO, Coverage)
 
 ### Instrumentation-Based PGO
 
@@ -1366,7 +1366,7 @@ clang -fxray-instrument -fno-xray-function-index hello.c
 
 ---
 
-## 11. Link-Time Optimization (LTO)
+## Link-Time Optimization (LTO)
 
 ### Basic LTO
 
@@ -1441,7 +1441,7 @@ clang -flto -fvirtual-function-elimination hello.cpp
 
 ---
 
-## 12. Modules & Precompiled Headers
+## Modules & Precompiled Headers
 
 ### C++20 Modules
 
@@ -1541,7 +1541,7 @@ clang -fpch-validate-input-files-content -include-pch prelude.h.pch main.c
 
 ---
 
-## 13. GPU / Offloading (CUDA, HIP, OpenMP)
+## GPU / Offloading (CUDA, HIP, OpenMP)
 
 ### CUDA
 
@@ -1736,7 +1736,7 @@ clang -fgpu-sanitize hello.cu
 
 ---
 
-## 14. OpenCL Options
+## OpenCL Options
 
 ```bash
 # Compile OpenCL kernel
@@ -1785,7 +1785,7 @@ clang -cl-ext=-cl_khr_fp16 hello.cl
 
 ---
 
-## 15. OpenMP Options
+## OpenMP Options
 
 ```bash
 # Enable OpenMP
@@ -1817,7 +1817,7 @@ clang -Xopenmp-target -O3 hello.c
 
 ---
 
-## 16. HLSL / DirectX / SPIR-V Options
+## HLSL / DirectX / SPIR-V Options
 
 ### HLSL (High-Level Shader Language)
 
@@ -1858,7 +1858,7 @@ clang -fspv-target-env=opencl shader.hlsl
 
 ---
 
-## 17. Objective-C / Objective-C++ Options
+## Objective-C / Objective-C++ Options
 
 ```bash
 # Enable Automatic Reference Counting (ARC)
@@ -1887,7 +1887,7 @@ clang -fobjc-disable-direct-methods-for-testing hello.m
 
 ---
 
-## 18. SYCL Options
+## SYCL Options
 
 ```bash
 # Enable SYCL C++ extensions
@@ -2017,7 +2017,7 @@ clang -mexec-model=reactor hello.c
 
 ---
 
-## 20. Include & Library Path Management
+## Include & Library Path Management
 
 ### Include Search Paths
 
@@ -2098,7 +2098,7 @@ clang --no-system-header-prefix=boost/ main.cpp
 
 ---
 
-## 21. Linking
+## Linking
 
 ### Basic Linking
 
@@ -2170,7 +2170,7 @@ clang -b maxdata:0x80000000 main.c
 
 ---
 
-## 22. Symbol Visibility & ABI
+## Symbol Visibility & ABI
 
 ### Default Visibility
 
@@ -2351,7 +2351,7 @@ clang -ffixed-edi hello.c                # x86
 
 ---
 
-## 23. Security Hardening
+## Security Hardening
 
 ### Pointer Authentication (AArch64)
 
@@ -2484,7 +2484,7 @@ clang -fno-crash-diagnostics hello.c
 
 ---
 
-## 24. C++ Specific Options
+## C++ Specific Options
 
 ### C++ Standard Types & Features
 
@@ -2630,7 +2630,7 @@ clang -fno-strict-bool=none hello.cpp
 
 ---
 
-## 25. Developer & Debugging Options
+## Developer & Debugging Options
 
 ### Compilation Timing
 
@@ -2795,7 +2795,7 @@ clang -print-file-name=libc.a
 
 ---
 
-## 26. Miscellaneous
+## Miscellaneous
 
 ### Environment & Freestanding
 
@@ -3072,7 +3072,7 @@ clang -fxl-pragma-pack hello.c
 
 ---
 
-## 27. Pass-Through Options
+## Pass-Through Options
 
 ### General Pass-Through
 
