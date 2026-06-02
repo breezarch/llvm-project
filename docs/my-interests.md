@@ -1,0 +1,4 @@
+---
+author: fzb
+type: idea
+---
